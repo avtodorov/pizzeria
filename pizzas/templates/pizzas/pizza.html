@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'pizzas/base.html' %}
+{% block content %}
+
+    <p> {{ pizza.name }}</p>
+    <p> <b>Description : </b></p>
+    <p> {{ description | linebreaks }}</p>
+    <p> <b>Ingredients : </b></p>
+    <p> {{ topping.pizza.name }} topping contains </p>
+
+    {% for ingredient in ingredients %}
+    <li>
+        {{ ingredient }}
+    </li>
+    {% endfor %}
+{% endblock content %}
+</body>
+</html>
